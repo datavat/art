@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DataVat Art - 数据艺术画廊</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Arial', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            justify-content: center;
+            color: #333;
+        }
+
+        .container {
+            background: rgba(255, 255, 255, 0.95);
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+            text-align: center;
+            max-width: 600px;
+            margin: 2rem;
+            backdrop-filter: blur(10px);
+        }
+
+        .logo {
+            margin-bottom: 2rem;
+            animation: float 3s ease-in-out infinite;
+        }
+
+        .logo svg {
+            filter: drop-shadow(0 5px 15px rgba(0, 0, 0, 0.1));
+        }
+
+        @keyframes float {
+            0%, 100% { transform: translateY(0px); }
+            50% { transform: translateY(-10px); }
+        }
+
+        h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            background: linear-gradient(45deg, #667eea, #764ba2);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitle {
+            font-size: 1.2rem;
+            color: #666;
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+
+        .description {
+            font-size: 1rem;
+            color: #777;
+            line-height: 1.8;
+            margin-bottom: 2rem;
+        }
+
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+            gap: 1.5rem;
+            margin-top: 2rem;
+        }
+
+        .feature {
+            padding: 1.5rem;
+            background: linear-gradient(45deg, #f093fb 0%, #f5576c 100%);
+            border-radius: 15px;
+            color: white;
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+
+        .feature:hover {
+            transform: translateY(-5px);
+        }
+
+        .feature h3 {
+            font-size: 1.1rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .feature p {
+            font-size: 0.9rem;
+            opacity: 0.9;
+        }
+
+        .coming-soon {
+            margin-top: 2rem;
+            padding: 1rem;
+            background: linear-gradient(45deg, #ffecd2 0%, #fcb69f 100%);
+            border-radius: 10px;
+            color: #8b4513;
+            font-weight: bold;
+        }
+
+        footer {
+            margin-top: 2rem;
+            color: rgba(255, 255, 255, 0.8);
+            font-size: 0.9rem;
+        }
+
+        footer a {
+            color: rgba(255, 255, 255, 0.9);
+            text-decoration: none;
+        }
+
+        footer a:hover {
+            text-decoration: underline;
+        }
+
+        @media (max-width: 768px) {
+            .container {
+                padding: 2rem;
+                margin: 1rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            .features {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="logo">
+            <svg width="150" height="150" viewBox="0 0 200 200" xmlns="http://www.w3.org/2000/svg">
+                <!-- 调色板背景 -->
+                <ellipse cx="100" cy="110" rx="85" ry="75" fill="#f5f5f5" stroke="#333" stroke-width="2"/>
+                
+                <!-- 拇指孔 -->
+                <ellipse cx="150" cy="130" rx="18" ry="25" fill="white" stroke="#333" stroke-width="2"/>
+                
+                <!-- 颜料点 -->
+                <circle cx="70" cy="70" r="12" fill="#ff6b6b"/>
+                <circle cx="110" cy="65" r="12" fill="#4ecdc4"/>
+                <circle cx="150" cy="75" r="12" fill="#45b7d1"/>
+                <circle cx="60" cy="110" r="12" fill="#96ceb4"/>
+                <circle cx="100" cy="105" r="12" fill="#ffeaa7"/>
+                <circle cx="80" cy="150" r="12" fill="#dda0dd"/>
+                <circle cx="120" cy="145" r="12" fill="#fab1a0"/>
+                
+                <!-- 画笔 -->
+                <g transform="translate(40, 30) rotate(-30)">
+                    <!-- 笔杆 -->
+                    <rect x="0" y="0" width="8" height="50" fill="#8b4513" rx="4"/>
+                    <!-- 笔头金属部分 -->
+                    <rect x="1" y="48" width="6" height="12" fill="#c0c0c0"/>
+                    <!-- 笔毛 -->
+                    <ellipse cx="4" cy="65" rx="3" ry="8" fill="#333"/>
+                </g>
+                
+                <!-- 装饰性小星星 -->
+                <g fill="#ffd700" opacity="0.7">
+                    <polygon points="30,40 32,46 38,46 33,50 35,56 30,52 25,56 27,50 22,46 28,46" transform="scale(0.6)"/>
+                    <polygon points="170,50 172,56 178,56 173,60 175,66 170,62 165,66 167,60 162,56 168,56" transform="scale(0.5)"/>
+                    <polygon points="160,170 162,176 168,176 163,180 165,186 160,182 155,186 157,180 152,176 158,176" transform="scale(0.4)"/>
+                </g>
+                
+                <!-- 可爱的表情 -->
+                <g transform="translate(100, 110)">
+                    <!-- 眼睛 -->
+                    <circle cx="-15" cy="-10" r="3" fill="#333"/>
+                    <circle cx="15" cy="-10" r="3" fill="#333"/>
+                    <!-- 嘴巴 -->
+                    <path d="M -10,5 Q 0,15 10,5" stroke="#333" stroke-width="2" fill="none" stroke-linecap="round"/>
+                </g>
+            </svg>
+        </div>
+
+        <h1>DataVat Art</h1>
+        <p class="subtitle">数据驱动的艺术创作平台</p>
+        
+        <p class="description">
+            欢迎来到 DataVat Art！这里是数据与艺术的完美融合之地。我们致力于探索数据可视化的艺术表达，
+            将枯燥的数据转化为美丽的视觉作品，让每一个数据点都能讲述自己的故事。
+        </p>
+
+        <div class="features">
+            <div class="feature">
+                <h3>🎨 数据艺术</h3>
+                <p>将复杂数据转化为美丽的视觉艺术作品</p>
+            </div>
+            <div class="feature">
+                <h3>📊 交互可视化</h3>
+                <p>创建引人入胜的交互式数据展示</p>
+            </div>
+            <div class="feature">
+                <h3>🌈 创意表达</h3>
+                <p>用艺术的方式重新诠释数据的美</p>
+            </div>
+        </div>
+
+        <div class="coming-soon">
+            🚀 精彩内容即将上线，敬请期待！
+        </div>
+    </div>
+
+    <footer>
+        <p>© 2025 DataVat Art | 
+        <a href="https://github.com/datavat/art" target="_blank">GitHub</a>
+        </p>
+    </footer>
+
+    <script>
+        // 简单的交互效果
+        document.addEventListener('DOMContentLoaded', function() {
+            const logo = document.querySelector('.logo');
+            const features = document.querySelectorAll('.feature');
+            
+            // 为logo添加点击效果
+            logo.addEventListener('click', function() {
+                this.style.transform = 'scale(1.1)';
+                setTimeout(() => {
+                    this.style.transform = 'scale(1)';
+                }, 200);
+            });
+            
+            // 为特性卡片添加随机色彩变化
+            features.forEach((feature, index) => {
+                feature.addEventListener('mouseenter', function() {
+                    const colors = [
+                        'linear-gradient(45deg, #ff9a9e 0%, #fecfef 100%)',
+                        'linear-gradient(45deg, #a18cd1 0%, #fbc2eb 100%)',
+                        'linear-gradient(45deg, #fad0c4 0%, #ffd1ff 100%)',
+                        'linear-gradient(45deg, #ffecd2 0%, #fcb69f 100%)'
+                    ];
+                    this.style.background = colors[Math.floor(Math.random() * colors.length)];
+                });
+            });
+        });
+    </script>
+</body>
+</html>
